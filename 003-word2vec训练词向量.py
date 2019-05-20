@@ -73,5 +73,3 @@ if __name__ == '__main__':
     split_word(text)
     # 训练模型
     train_vec()
-
-
