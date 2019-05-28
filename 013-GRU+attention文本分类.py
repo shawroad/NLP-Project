@@ -64,7 +64,7 @@ model.save('FastTextClassify.h5')
 
 
 # # 另外一种attention 这里的attention是向量
-# # 最后 权重得分是一个向量 ，和特征词向量做element-wise的相乘，对特征词向量每个维度进行不同的缩放操作。
+# # 最后 权重得分是一个向量,和特征词向量做element-wise的相乘，对特征词向量每个维度进行不同的缩放操作。
 # K.clear_session()
 # input_ = Input(shape=(max_len,))
 # words = Embedding(10000, 100, input_length=max_len)(input_)
