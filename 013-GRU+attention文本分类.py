@@ -60,3 +60,38 @@ print("准确率:", accuracy)
 
 # 保存模型
 model.save('FastTextClassify.h5')
+
+
+
+# # 另外一种attention 这里的attention是向量
+# # 最后 权重得分是一个向量 ，和特征词向量做element-wise的相乘，对特征词向量每个维度进行不同的缩放操作。
+# K.clear_session()
+# input_ = Input(shape=(max_len,))
+# words = Embedding(10000, 100, input_length=max_len)(input_)
+# sen = GRU(64, return_sequences=True)(words)  # [b_size,maxlen,64]
+# 
+# # attention
+# attention_pre = Dense(64, name='attention_vec')(sen)   # [b_size,maxlen,64]
+# attention_probs = Softmax()(attention_pre)  # [b_size,maxlen,64]
+# attention_mul = Lambda(lambda x: x[0]*x[1])([attention_probs, sen])
+# 
+# output = Flatten()(attention_mul)
+# output = Dense(32,activation="relu")(output)
+# output = Dense(2, activation='softmax')(output)
+# model = Model(inputs=input_, outputs=output)
+# model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["acc"])
+# model.summary()
+# 
+# # 训练模型
+# batch_size = 64
+# epochs = 2
+# model.fit(train_data_pad, train_labels_input, batch_size, epochs, validation_data=(test_data_pad, test_labels_input))
+# 
+# # 模型评估
+# loss, accuracy = model.evaluate(test_data_pad, test_labels_input)
+# print("损失:", loss)
+# print("准确率:", accuracy)
+# 
+# # 保存模型
+# model.save('FastTextClassify.h5')
+
