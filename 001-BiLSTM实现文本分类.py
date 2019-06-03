@@ -40,7 +40,7 @@ print(y_train)    # 输出相当于一个列表，用0表示负样本 用1表示
 model = Sequential()
 # 注意词嵌入的时候 是输入的词的个数，以及词要嵌入到多少维向量，以及进行多少词的嵌入
 model.add(Embedding(max_features, 128, input_length=maxlen))
-model.add(Bidirectional(LSTM(64)))   # 一层有64个LSTM的cell  其实相当于循环64次
+model.add(Bidirectional(LSTM(64)))   # 输出维度为64维
 model.add(Dropout(0.5))
 model.add(Dense(1, activation='sigmoid'))  # 因为是二分类，我们这里采用sigmoid激活函数
 
