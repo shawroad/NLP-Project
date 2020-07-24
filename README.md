@@ -1,5 +1,5 @@
 # NLP-Project
-这里整理了本人在学习NLP过程中做的一些小项目。  
+Here I sort out some small projects I did in the process of learning NLP
 
 里面涉及的数据集这里没有进行上传。 如果有需要，可以联系我   邮箱：luxiao@stu.xidian.edu.cn
 </br>带attention的seq2seq</br>
